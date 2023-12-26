@@ -9,9 +9,9 @@ export default function TopNavigation() {
 
   return (
     <>
-      <div className="navbar bg-gray-100 shadow-lg w-[100vw]">
+      <div className="navbar bg-gray-100 shadow-lg ">
         <div className="flex-1">
-          <a className="btn btn-ghost text-2xl">ONDC</a>
+          <a className="btn btn-ghost text-2xl">ONDC Some content</a>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control flex flex-row px-6 ">

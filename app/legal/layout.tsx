@@ -4,14 +4,14 @@ import TopNavigation from "../ui/TopNavbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
-      <div className="w-full flex-none md:w-64">
-        <TopNavigation/>
-        <SidebarNavigation/>
+    <div className="flex h-screen">
+      <SidebarNavigation/>
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <TopNavigation />
+        <main className=" overflow-x-hidden overflow-y-auto">
+          {children}
+        </main>
       </div>
-      <div>
-      </div>
-      {/* <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div> */}
     </div>
   );
 }
