@@ -1,36 +1,55 @@
-import Link from "next/link";
+"use client";
+
+import { Sidebar } from "flowbite-react";
+import {
+  HiChartPie,
+  HiShoppingBag,
+  HiBookmark
+} from "react-icons/hi";
 
 export default function SidebarNavigation() {
+  
   return (
-    
-    <div className="flex h-full flex-col px-3 py-4 md:px-2">
-      <button>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
-          />
-        </svg>
-      </button>
-      <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
-        <Link
-          key={1}
-          href={"#"}
-          className={`flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3`}
-        >
-          <p className="hidden md:block">pppp</p>
-        </Link>
-        <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
-        <form></form>
-      </div>
-    </div>
+    <Sidebar aria-label="Sidebar with multi-level dropdown example" className="bg-gray-100" >
+      <Sidebar.Logo href="#" img="" className="bg-gray-100 p-10 -mt-[20px] mx-[-20px]" >
+        Explore
+      </Sidebar.Logo>
+      <Sidebar.Items className="bg-gray-100 -mt-[20px] mx-[-20px] px-5 pb-5" >
+        <Sidebar.ItemGroup>
+          <Sidebar.Item href="#" icon={HiChartPie}>
+            Dashboard
+          </Sidebar.Item>
+          <Sidebar.Collapse icon={HiShoppingBag} label="E-commerce">
+            <Sidebar.Item href="#">Products</Sidebar.Item>
+            <Sidebar.Item href="#">Sales</Sidebar.Item>
+            <Sidebar.Item href="#">Refunds</Sidebar.Item>
+            <Sidebar.Item href="#">Shipping</Sidebar.Item>
+          </Sidebar.Collapse>
+          <Sidebar.Collapse icon={HiShoppingBag} label="E-commerce">
+            <Sidebar.Item href="#">Products</Sidebar.Item>
+            <Sidebar.Item href="#">Sales</Sidebar.Item>
+            <Sidebar.Item href="#">Refunds</Sidebar.Item>
+            <Sidebar.Item href="#">Shipping</Sidebar.Item>
+          </Sidebar.Collapse>
+          <Sidebar.Collapse icon={HiShoppingBag} label="E-commerce">
+            <Sidebar.Item href="#">Products</Sidebar.Item>
+            <Sidebar.Item href="#">Sales</Sidebar.Item>
+            <Sidebar.Item href="#">Refunds</Sidebar.Item>
+            <Sidebar.Item href="#">Shipping</Sidebar.Item>
+          </Sidebar.Collapse>
+          <Sidebar.Collapse icon={HiShoppingBag} label="E-commerce">
+            <Sidebar.Item href="#">Products</Sidebar.Item>
+            <Sidebar.Item href="#">Sales</Sidebar.Item>
+            <Sidebar.Item href="#">Refunds</Sidebar.Item>
+            <Sidebar.Item href="#">Shipping</Sidebar.Item>
+          </Sidebar.Collapse>
+        </Sidebar.ItemGroup>
+        <Sidebar.ItemGroup>
+        <Sidebar.Item href="#" icon={HiBookmark}>
+            Your Bookmarks
+          </Sidebar.Item>
+        </Sidebar.ItemGroup>
+      </Sidebar.Items>
+    </Sidebar>
   );
 }

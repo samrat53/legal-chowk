@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SidebarNavigation from "./ui/SidebarNav";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.3/dist/flowbite.min.css"/>
+      </head>
+      <body className={inter.className}>
+        {children}
+        <Script
+          src="https://unpkg.com/flowbite@1.3.3/dist/flowbite.js"
+          strategy="beforeInteractive"
+        />
+      </body>
     </html>
   );
 }

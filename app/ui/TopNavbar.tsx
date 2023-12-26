@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import LoginSignup from "@/components/Login-Signup";
-import UserIcon from "./UserIcon";
+import BlueButton from "./Button-blue";
 
 export default function TopNavigation() {
   const [loggedIn, setlogin]=useState(false);
 
   return (
     <>
-      <div className="navbar bg-base-100 w-[100vw]">
+      <div className="navbar bg-gray-100 shadow-lg w-[100vw]">
         <div className="flex-1">
           <a className="btn btn-ghost text-2xl">ONDC</a>
         </div>
@@ -18,9 +18,9 @@ export default function TopNavigation() {
             <input
               type="text"
               placeholder="Search"
-              className="input input-bordered w-[30rem] max-w-xs"
+              className="input border-none w-[30rem] max-w-xs rounded-lg"
             />
-            <button className="btn btn-ghost btn-circle ">
+            <button className="btn btn-ghost btn-circle">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -37,7 +37,8 @@ export default function TopNavigation() {
               </svg>
             </button>
           </div>
-          {loggedIn?<UserIcon/>: <LoginSignup/>}
+          {loggedIn?<BlueButton text="Logout"/>: <LoginSignup/>}
+          {/* {loggedIn? <LoginSignup/>:<BlueButton text="Logout"/>} */}
         </div>
       </div>
     </>
