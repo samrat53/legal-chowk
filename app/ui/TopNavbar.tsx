@@ -3,6 +3,8 @@
 import { useState } from "react";
 import LoginSignup from "@/components/Login-Signup";
 import BlueButton from "./Button-blue";
+import { DarkThemeToggle} from 'flowbite-react';
+
 
 export default function TopNavigation() {
   const [loggedIn, setlogin]=useState(false);
@@ -38,6 +40,7 @@ export default function TopNavigation() {
             </button>
           </div>
           {loggedIn?<BlueButton text="Logout"/>: <LoginSignup/>}
+          <DarkThemeToggle />
           {/* {loggedIn? <LoginSignup/>:<BlueButton text="Logout"/>} */}
         </div>
       </div>

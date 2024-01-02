@@ -10,7 +10,7 @@ import {
 export default function SidebarNavigation() {
   
   return (
-    <Sidebar aria-label="Sidebar with multi-level dropdown example" className="bg-gray-100 h-[100vh]" >
+    <Sidebar aria-label="Sidebar with multi-level dropdown example" className="bg-gray-100 h-full " >
       <Sidebar.Logo href="#" img="" className="bg-gray-100 p-10 -mt-[20px] mx-[-20px] hover:bg-gray-300 transition-colors" >
         Logo Clickable
       </Sidebar.Logo>
